@@ -6,10 +6,10 @@ import java.util.Optional;
 import com.mphasis.entity.Car;
 
 public interface CarService {
-  
-  public void create(Car car);
 
-  public void update(Car car);
+  public Car create(Car car);
+
+  public Car update(Car car);
 
   public void delete(Car car);
 
@@ -17,9 +17,7 @@ public interface CarService {
 
   public Optional<Car> find(Car car);
 
-  public List < Car > findByBrand(String brand);
+  public List<Car> findByBrand(String brand);
 
   public Car findByModel(String model);
-
-  public List < Car > findAll();
 }
