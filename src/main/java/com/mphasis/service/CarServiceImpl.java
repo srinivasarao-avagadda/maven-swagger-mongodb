@@ -1,6 +1,5 @@
 package com.mphasis.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -21,15 +20,20 @@ public class CarServiceImpl implements CarService {
 
   /** create car*/
   @Override
-  public Car create(Car car) {
-    Car c = carRepo.save(car);
-    LOGGER.info("Created:- " + c);
-    return c;
+  public void create(Car car) {
+    carRepo.save(car);
+    LOGGER.info("Created: " + car);
   }
 
   /** find car*/
+  
   @Override
-  public List<Car> findByBrand(String brand) {
+  public Car findById(String id) {
+    return carRepo.findById(id).get();
+  }
+  
+  @Override
+  public Car findByBrand(String brand) {
     return carRepo.findByBrand(brand);
   }
 
@@ -47,7 +51,7 @@ public class CarServiceImpl implements CarService {
   @Override
   public Car update(Car car) {
     Car c = carRepo.save(car);
-    LOGGER.info("Updated:- " + c);
+    LOGGER.info("Updated: " + c);
     return c;
   }
 
@@ -55,11 +59,12 @@ public class CarServiceImpl implements CarService {
   @Override
   public void delete(Car car) {
     carRepo.delete(car);
-    LOGGER.info("Deleted:- " + car.getId());
+    LOGGER.info("Deleted: " + car.getId());
   }
 
   @Override
   public void deleteAll() {
     carRepo.deleteAll();
+    LOGGER.info("Deleted everthing");
   }
 }

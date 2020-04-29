@@ -1,13 +1,12 @@
 package com.mphasis.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.mphasis.entity.Car;
 
 public interface CarService {
 
-  public Car create(Car car);
+  public void create(Car car);
 
   public Car update(Car car);
 
@@ -16,8 +15,10 @@ public interface CarService {
   public void deleteAll();
 
   public Optional<Car> find(Car car);
+  
+  public Car findById(String id);
 
-  public List<Car> findByBrand(String brand);
+  public Car findByBrand(String brand);
 
   public Car findByModel(String model);
 }
