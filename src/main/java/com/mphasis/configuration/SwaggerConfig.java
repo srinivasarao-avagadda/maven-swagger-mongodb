@@ -36,7 +36,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                                    .contact(new Contact("Srinivas", "https://github.com/srinivasarao-avagadda",
                                                         "srinivasacse@gmail.com"))
                                    .version("1.0.0")
-                                   .license("Mphasis License Version 2.0")
+                                   .license("Company License Version 2.0")
                                    .licenseUrl("https://www.mphasis.org/licenses/LICENSE-2.0\"")
                                    .build();
     }
